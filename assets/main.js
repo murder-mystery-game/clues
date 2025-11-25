@@ -402,6 +402,9 @@
 		
 				var a, e, x, i;
 		
+				// Trigger "startComponents" custom event.
+					$body.dispatchEvent(new CustomEvent('startComponents', { detail: { parent: parent } }));
+		
 				// IFRAMEs.
 		
 					// Get list of unloaded IFRAMEs.
@@ -511,6 +514,9 @@
 			unloadElements = function(parent) {
 		
 				var a, e, x, i;
+		
+				// Trigger "stopComponents" custom event.
+					$body.dispatchEvent(new CustomEvent('stopComponents', { detail: { parent: parent } }));
 		
 				// IFRAMEs.
 		
@@ -702,8 +708,8 @@
 		
 					})();
 		
-				// Apply "is-touch" class to body.
-					$body.classList.add('is-touch');
+				// Apply "touch" class to body.
+					$body.classList.add('touch');
 		
 			}
 		
@@ -748,8 +754,8 @@
 		
 						})();
 		
-				// Apply "is-touch" class to body.
-					$body.classList.add('is-touch');
+				// Apply "touch" class to body.
+					$body.classList.add('touch');
 		
 			}
 	
